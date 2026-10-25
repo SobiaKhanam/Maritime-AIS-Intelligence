@@ -1,0 +1,11 @@
+category,speed_knots,implied_knots,speed_change_knots,score_within_category,rule_speed_jump,rule_improbable_displacement
+Cargo,12.93,12.92,1.68,-0.2967,False,False
+Cargo,13.5,13.5,-1.13,-0.2945,False,False
+Tanker,9.75,9.75,2.11,-0.2914,False,False
+Cargo,11.46,11.45,1.94,-0.2913,False,False
+Fishing,11.78,11.78,1.33,-0.29,False,False
+Fishing,11.59,11.59,1.32,-0.2887,False,False
+Special Craft,14.26,14.27,2.12,-0.2874,False,False
+Fishing,11.62,11.62,-0.81,-0.2874,False,False
+Cargo,13.35,13.35,1.05,-0.2865,False,False
+Cargo,12.87,12.88,-0.69,-0.2852,False,False

@@ -1,0 +1,13 @@
+fold,model,n,MAE_knots,RMSE_knots,bootstrap_difference_ci_low,bootstrap_difference_ci_high
+1,Persistence,6162,0.9118,2.4924,,
+1,Gradient boosting,6162,1.0529,2.099,0.0873,0.1915
+1,Absolute-error delta,6162,0.835,2.2956,-0.0959,-0.06
+1,Stationary hybrid,6162,0.8369,2.2932,-0.0942,-0.0578
+2,Persistence,6163,1.0654,2.7066,,
+2,Gradient boosting,6163,1.1248,2.2632,0.0108,0.1085
+2,Absolute-error delta,6163,0.9175,2.4269,-0.1905,-0.1073
+2,Stationary hybrid,6163,0.9181,2.4217,-0.1907,-0.1062
+3,Persistence,6163,0.8269,2.2899,,
+3,Gradient boosting,6163,1.0407,1.9609,0.1587,0.274
+3,Absolute-error delta,6163,0.7358,2.0459,-0.117,-0.0654
+3,Stationary hybrid,6163,0.7378,2.0432,-0.1152,-0.0634

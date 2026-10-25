@@ -1,0 +1,11 @@
+category,speed_knots,implied_knots,speed_change_knots,score_within_category,rule_speed_jump,rule_improbable_displacement
+Fishing,8.9,0.68,8.9,-0.29,False,False
+Tug,0.9,9.11,-11.2,-0.2659,False,False
+Tug,1.8,9.2,-10.0,-0.2646,False,False
+Tug,12.7,11.41,1.5,-0.2633,False,False
+Fishing,8.1,7.75,0.4,-0.2603,False,False
+Tug,6.5,10.15,-5.1,-0.256,False,False
+Special Craft,10.5,8.03,9.1,-0.256,False,False
+Fishing,6.5,0.14,6.5,-0.2535,False,False
+Tug,11.9,10.51,1.4,-0.2518,False,False
+Tug,1.1,9.92,-7.5,-0.2518,False,False

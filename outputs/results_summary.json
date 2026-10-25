@@ -1,0 +1,255 @@
+{
+  "raw_rows": 43283,
+  "after_dedup_and_coordinates": 43283,
+  "excluded_nonship_or_invalid_mmsi_rows": 561,
+  "analysed_rows": 42722,
+  "unique_vessels": 1638,
+  "start_utc": "2023-08-18 06:14:13+00:00",
+  "end_utc": "2023-10-01 07:14:19+00:00",
+  "report_gaps": {
+    "median_min": 66.05,
+    "p10_min": 62.17,
+    "p90_min": 262.3,
+    "fraction_30_to_90_min": 0.7033
+  },
+  "daily_min": 520,
+  "daily_max": 2118,
+  "study_area": "Arabian Sea / Pakistan coastal approaches, as represented in this export; no EEZ jurisdiction assertion",
+  "spatial": {
+    "vessel_hour_records": 42673,
+    "occupied_grid_cells": 11526,
+    "epsilon_sweep": [
+      {
+        "epsilon_km": 1,
+        "clusters": 100,
+        "noise_fraction": 0.3478,
+        "largest_cluster_fraction": 0.3429
+      },
+      {
+        "epsilon_km": 2,
+        "clusters": 379,
+        "noise_fraction": 0.2603,
+        "largest_cluster_fraction": 0.5985
+      },
+      {
+        "epsilon_km": 5,
+        "clusters": 101,
+        "noise_fraction": 0.0183,
+        "largest_cluster_fraction": 0.6505
+      },
+      {
+        "epsilon_km": 10,
+        "clusters": 7,
+        "noise_fraction": 0.0006,
+        "largest_cluster_fraction": 0.9836
+      },
+      {
+        "epsilon_km": 20,
+        "clusters": 1,
+        "noise_fraction": 0.0001,
+        "largest_cluster_fraction": 0.9999
+      }
+    ],
+    "kde_bandwidth_km": 10,
+    "method": "Haversine DBSCAN on weighted 0.5 km cell centres using all vessel-hour records; Gaussian KDE on a 2 km raster with geographic basemap.",
+    "caveat": "AIS reporting coverage varies; hotspots show reporting concentration, not unique vessel counts."
+  },
+  "anomaly_screening": {
+    "rule_speed_jump": 8,
+    "rule_improbable_displacement": 2,
+    "category_counts": [
+      {
+        "category": "Cargo",
+        "scored": 11844,
+        "unscored": 0,
+        "flagged": 2259,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Fishing",
+        "scored": 618,
+        "unscored": 0,
+        "flagged": 100,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Other",
+        "scored": 392,
+        "unscored": 0,
+        "flagged": 86,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Pleasure Craft",
+        "scored": 0,
+        "unscored": 31,
+        "flagged": 0,
+        "note": "fewer than 100 segments"
+      },
+      {
+        "category": "Sailing Vessel",
+        "scored": 0,
+        "unscored": 12,
+        "flagged": 0,
+        "note": "fewer than 100 segments"
+      },
+      {
+        "category": "Special Craft",
+        "scored": 5193,
+        "unscored": 0,
+        "flagged": 1265,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Tanker",
+        "scored": 7773,
+        "unscored": 0,
+        "flagged": 1200,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Tug",
+        "scored": 3077,
+        "unscored": 0,
+        "flagged": 458,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Unknown",
+        "scored": 0,
+        "unscored": 8,
+        "flagged": 0,
+        "note": "fewer than 100 segments"
+      },
+      {
+        "category": "Unspecified",
+        "scored": 0,
+        "unscored": 23,
+        "flagged": 0,
+        "note": "fewer than 100 segments"
+      },
+      {
+        "category": "Wing in Grnd",
+        "scored": 0,
+        "unscored": 2,
+        "flagged": 0,
+        "note": "fewer than 100 segments"
+      }
+    ],
+    "note": "Unlabelled screening; no validated anomalies inferred."
+  },
+  "speed_forecasting": {
+    "task": "Next observed speed; variable future observation interval, never a fixed-horizon prediction",
+    "rolling_folds": [
+      {
+        "fold": 1,
+        "model": "Persistence",
+        "n": 6162,
+        "MAE_knots": 0.9118,
+        "RMSE_knots": 2.4924,
+        "bootstrap_difference_ci_low": null,
+        "bootstrap_difference_ci_high": null
+      },
+      {
+        "fold": 1,
+        "model": "Gradient boosting",
+        "n": 6162,
+        "MAE_knots": 1.0529,
+        "RMSE_knots": 2.099,
+        "bootstrap_difference_ci_low": 0.0873,
+        "bootstrap_difference_ci_high": 0.1915
+      },
+      {
+        "fold": 1,
+        "model": "Absolute-error delta",
+        "n": 6162,
+        "MAE_knots": 0.835,
+        "RMSE_knots": 2.2956,
+        "bootstrap_difference_ci_low": -0.0959,
+        "bootstrap_difference_ci_high": -0.06
+      },
+      {
+        "fold": 1,
+        "model": "Stationary hybrid",
+        "n": 6162,
+        "MAE_knots": 0.8369,
+        "RMSE_knots": 2.2932,
+        "bootstrap_difference_ci_low": -0.0942,
+        "bootstrap_difference_ci_high": -0.0578
+      },
+      {
+        "fold": 2,
+        "model": "Persistence",
+        "n": 6163,
+        "MAE_knots": 1.0654,
+        "RMSE_knots": 2.7066,
+        "bootstrap_difference_ci_low": null,
+        "bootstrap_difference_ci_high": null
+      },
+      {
+        "fold": 2,
+        "model": "Gradient boosting",
+        "n": 6163,
+        "MAE_knots": 1.1248,
+        "RMSE_knots": 2.2632,
+        "bootstrap_difference_ci_low": 0.0108,
+        "bootstrap_difference_ci_high": 0.1085
+      },
+      {
+        "fold": 2,
+        "model": "Absolute-error delta",
+        "n": 6163,
+        "MAE_knots": 0.9175,
+        "RMSE_knots": 2.4269,
+        "bootstrap_difference_ci_low": -0.1905,
+        "bootstrap_difference_ci_high": -0.1073
+      },
+      {
+        "fold": 2,
+        "model": "Stationary hybrid",
+        "n": 6163,
+        "MAE_knots": 0.9181,
+        "RMSE_knots": 2.4217,
+        "bootstrap_difference_ci_low": -0.1907,
+        "bootstrap_difference_ci_high": -0.1062
+      },
+      {
+        "fold": 3,
+        "model": "Persistence",
+        "n": 6163,
+        "MAE_knots": 0.8269,
+        "RMSE_knots": 2.2899,
+        "bootstrap_difference_ci_low": null,
+        "bootstrap_difference_ci_high": null
+      },
+      {
+        "fold": 3,
+        "model": "Gradient boosting",
+        "n": 6163,
+        "MAE_knots": 1.0407,
+        "RMSE_knots": 1.9609,
+        "bootstrap_difference_ci_low": 0.1587,
+        "bootstrap_difference_ci_high": 0.274
+      },
+      {
+        "fold": 3,
+        "model": "Absolute-error delta",
+        "n": 6163,
+        "MAE_knots": 0.7358,
+        "RMSE_knots": 2.0459,
+        "bootstrap_difference_ci_low": -0.117,
+        "bootstrap_difference_ci_high": -0.0654
+      },
+      {
+        "fold": 3,
+        "model": "Stationary hybrid",
+        "n": 6163,
+        "MAE_knots": 0.7378,
+        "RMSE_knots": 2.0432,
+        "bootstrap_difference_ci_low": -0.1152,
+        "bootstrap_difference_ci_high": -0.0634
+      }
+    ],
+    "caveat": "Same vessels can recur in successive periods; report timing is not known in advance. Future gap used only for retrospective stratification."
+  }
+}

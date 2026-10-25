@@ -1,0 +1,6 @@
+epsilon_km,clusters,noise_fraction,largest_cluster_fraction
+1,100,0.3478,0.3429
+2,379,0.2603,0.5985
+5,101,0.0183,0.6505
+10,7,0.0006,0.9836
+20,1,0.0001,0.9999

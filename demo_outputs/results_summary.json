@@ -1,0 +1,213 @@
+{
+  "raw_rows": 75225,
+  "after_dedup_and_coordinates": 75225,
+  "excluded_nonship_or_invalid_mmsi_rows": 0,
+  "analysed_rows": 75225,
+  "unique_vessels": 120,
+  "start_utc": "2023-08-18 00:00:00+00:00",
+  "end_utc": "2023-09-21 23:00:00+00:00",
+  "report_gaps": {
+    "median_min": 60.0,
+    "p10_min": 60.0,
+    "p90_min": 120.0,
+    "fraction_30_to_90_min": 0.7479
+  },
+  "daily_min": 2109,
+  "daily_max": 2182,
+  "study_area": "Arabian Sea / Pakistan coastal approaches, as represented in this export; no EEZ jurisdiction assertion",
+  "spatial": {
+    "vessel_hour_records": 75225,
+    "occupied_grid_cells": 29260,
+    "epsilon_sweep": [
+      {
+        "epsilon_km": 1,
+        "clusters": 3693,
+        "noise_fraction": 0.5924,
+        "largest_cluster_fraction": 0.0009
+      },
+      {
+        "epsilon_km": 2,
+        "clusters": 1796,
+        "noise_fraction": 0.1485,
+        "largest_cluster_fraction": 0.3836
+      },
+      {
+        "epsilon_km": 5,
+        "clusters": 72,
+        "noise_fraction": 0.0057,
+        "largest_cluster_fraction": 0.968
+      },
+      {
+        "epsilon_km": 10,
+        "clusters": 2,
+        "noise_fraction": 0.0002,
+        "largest_cluster_fraction": 0.9995
+      },
+      {
+        "epsilon_km": 20,
+        "clusters": 2,
+        "noise_fraction": 0.0,
+        "largest_cluster_fraction": 0.9997
+      }
+    ],
+    "kde_bandwidth_km": 10,
+    "method": "Haversine DBSCAN on weighted 0.5 km cell centres using all vessel-hour records; Gaussian KDE on a 2 km raster with geographic basemap.",
+    "caveat": "AIS reporting coverage varies; hotspots show reporting concentration, not unique vessel counts."
+  },
+  "anomaly_screening": {
+    "rule_speed_jump": 0,
+    "rule_improbable_displacement": 374,
+    "category_counts": [
+      {
+        "category": "Cargo",
+        "scored": 14062,
+        "unscored": 0,
+        "flagged": 2326,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Fishing",
+        "scored": 13835,
+        "unscored": 0,
+        "flagged": 2105,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Special Craft",
+        "scored": 14004,
+        "unscored": 0,
+        "flagged": 2259,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Tanker",
+        "scored": 14023,
+        "unscored": 0,
+        "flagged": 2027,
+        "note": "unlabelled screening"
+      },
+      {
+        "category": "Tug",
+        "scored": 13931,
+        "unscored": 0,
+        "flagged": 2379,
+        "note": "unlabelled screening"
+      }
+    ],
+    "note": "Unlabelled screening; no validated anomalies inferred."
+  },
+  "speed_forecasting": {
+    "task": "Next observed speed; variable future observation interval, never a fixed-horizon prediction",
+    "rolling_folds": [
+      {
+        "fold": 1,
+        "model": "Persistence",
+        "n": 11266,
+        "MAE_knots": 0.596,
+        "RMSE_knots": 0.9163,
+        "bootstrap_difference_ci_low": null,
+        "bootstrap_difference_ci_high": null
+      },
+      {
+        "fold": 1,
+        "model": "Gradient boosting",
+        "n": 11266,
+        "MAE_knots": 0.6132,
+        "RMSE_knots": 0.8658,
+        "bootstrap_difference_ci_low": 0.0096,
+        "bootstrap_difference_ci_high": 0.0272
+      },
+      {
+        "fold": 1,
+        "model": "Absolute-error delta",
+        "n": 11266,
+        "MAE_knots": 0.5893,
+        "RMSE_knots": 0.8957,
+        "bootstrap_difference_ci_low": -0.0086,
+        "bootstrap_difference_ci_high": -0.005
+      },
+      {
+        "fold": 1,
+        "model": "Stationary hybrid",
+        "n": 11266,
+        "MAE_knots": 0.5919,
+        "RMSE_knots": 0.9021,
+        "bootstrap_difference_ci_low": -0.0056,
+        "bootstrap_difference_ci_high": -0.0026
+      },
+      {
+        "fold": 2,
+        "model": "Persistence",
+        "n": 11266,
+        "MAE_knots": 0.5801,
+        "RMSE_knots": 0.8708,
+        "bootstrap_difference_ci_low": null,
+        "bootstrap_difference_ci_high": null
+      },
+      {
+        "fold": 2,
+        "model": "Gradient boosting",
+        "n": 11266,
+        "MAE_knots": 0.5939,
+        "RMSE_knots": 0.822,
+        "bootstrap_difference_ci_low": 0.0082,
+        "bootstrap_difference_ci_high": 0.0201
+      },
+      {
+        "fold": 2,
+        "model": "Absolute-error delta",
+        "n": 11266,
+        "MAE_knots": 0.5734,
+        "RMSE_knots": 0.8485,
+        "bootstrap_difference_ci_low": -0.0085,
+        "bootstrap_difference_ci_high": -0.0046
+      },
+      {
+        "fold": 2,
+        "model": "Stationary hybrid",
+        "n": 11266,
+        "MAE_knots": 0.5755,
+        "RMSE_knots": 0.8562,
+        "bootstrap_difference_ci_low": -0.006,
+        "bootstrap_difference_ci_high": -0.0031
+      },
+      {
+        "fold": 3,
+        "model": "Persistence",
+        "n": 11266,
+        "MAE_knots": 0.5887,
+        "RMSE_knots": 0.8801,
+        "bootstrap_difference_ci_low": null,
+        "bootstrap_difference_ci_high": null
+      },
+      {
+        "fold": 3,
+        "model": "Gradient boosting",
+        "n": 11266,
+        "MAE_knots": 0.6045,
+        "RMSE_knots": 0.8359,
+        "bootstrap_difference_ci_low": 0.0089,
+        "bootstrap_difference_ci_high": 0.0219
+      },
+      {
+        "fold": 3,
+        "model": "Absolute-error delta",
+        "n": 11266,
+        "MAE_knots": 0.5814,
+        "RMSE_knots": 0.8591,
+        "bootstrap_difference_ci_low": -0.0093,
+        "bootstrap_difference_ci_high": -0.0055
+      },
+      {
+        "fold": 3,
+        "model": "Stationary hybrid",
+        "n": 11266,
+        "MAE_knots": 0.5841,
+        "RMSE_knots": 0.8664,
+        "bootstrap_difference_ci_low": -0.006,
+        "bootstrap_difference_ci_high": -0.0031
+      }
+    ],
+    "caveat": "Same vessels can recur in successive periods; report timing is not known in advance. Future gap used only for retrospective stratification."
+  }
+}

@@ -1,0 +1,12 @@
+category,scored,unscored,flagged,note
+Cargo,11844,0,2259,unlabelled screening
+Fishing,618,0,100,unlabelled screening
+Other,392,0,86,unlabelled screening
+Pleasure Craft,0,31,0,fewer than 100 segments
+Sailing Vessel,0,12,0,fewer than 100 segments
+Special Craft,5193,0,1265,unlabelled screening
+Tanker,7773,0,1200,unlabelled screening
+Tug,3077,0,458,unlabelled screening
+Unknown,0,8,0,fewer than 100 segments
+Unspecified,0,23,0,fewer than 100 segments
+Wing in Grnd,0,2,0,fewer than 100 segments
